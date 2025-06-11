@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3306;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json({ limit: '5mb' }));
@@ -18,7 +18,7 @@ app.use('/api', authRoutes);
 app.use('/api', karyawanRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Backend Nexa is running...');
+    res.send('Backend Nexa by Farhan Ryan Rafli');
 });
 
 app.listen(port, () => {

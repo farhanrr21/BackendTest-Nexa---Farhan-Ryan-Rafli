@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middlewares/auth.middleware');
 
-// Controllers (belum kita buat, kita buat struktur dulu)
 const {
     addKaryawan,
     getKaryawanList,
@@ -13,7 +12,7 @@ const {
 // Semua route butuh token
 router.post('/karyawan', authMiddleware, addKaryawan);
 router.get('/karyawan', authMiddleware, getKaryawanList);
-router.put('/karyawan', authMiddleware, updateKaryawan);
-router.delete('/karyawan', authMiddleware, deactivateKaryawan);
+router.put('/karyawan/:nip', authMiddleware, updateKaryawan);
+router.put('/karyawan/deactivate/:nip', authMiddleware, deactivateKaryawan);
 
 module.exports = router;
