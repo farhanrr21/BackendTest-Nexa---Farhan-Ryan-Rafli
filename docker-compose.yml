@@ -1,0 +1,37 @@
+services:
+  app:
+    build: .
+    container_name: nexa_backend_app
+    ports:
+      - "3000:3000"  # Adjust the port if necessary
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=production
+    networks:
+      - nexa_network
+    restart: unless-stopped
+
+  db:
+    image: mysql:5.7
+    container_name: nexa_backend_db
+    environment:
+      MYSQL_ROOT_PASSWORD: Janglidalam29J
+      MYSQL_DATABASE: gmedia_democase
+      MYSQL_USER: gmedia_democase2
+      MYSQL_PASSWORD: Janglidalam29J
+    ports:
+      - "3306:3306"
+    networks:
+      - nexa_network
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+networks:
+  nexa_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
