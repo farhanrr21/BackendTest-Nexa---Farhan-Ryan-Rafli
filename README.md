@@ -5,6 +5,18 @@ Ini adalah project backend untuk technical test NEXA, termasuk REST API built me
 ## Requirements:
 - Docker
 - Docker Compose
+- Tambahkan .env file 
+```bash
+example:
+PORT= 
+DB_HOST=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+DB_PORT=
+JWT_SECRET=
+AES_KEY=
+```
 
 ## Setup
 
