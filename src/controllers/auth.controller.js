@@ -4,7 +4,7 @@ const pool = require('../config/db');
 
 // Fungsi untuk mendekripsi password menggunakan AES (bagian sedikit mumet :P)
 function encryptPassword(password) {
-    const key = Buffer.from('nexatest', 'utf8'); // 8 bytes
+    const key = Buffer.from(process.env.AES_KEY, 'utf8'); // 8 bytes
     const keyPadded = Buffer.alloc(16); // pad to 16 bytes (AES-128)
     key.copy(keyPadded); // copy 'nexatest' into keyPadded
 
