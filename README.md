@@ -24,5 +24,6 @@ AES_KEY=
 git clone https://github.com/farhanrr21/BackendTest-Nexa---Farhan-Ryan-Rafli.git
 cd <project_folder>
 code .
+npm install
 (aktifkan Docker)
 docker-compose up --build
